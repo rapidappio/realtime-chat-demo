@@ -3,7 +3,7 @@ const http = require('http');
 const cors = require('cors');
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize('postgresql://u_306a01ba_4e58_4ac6_8fb0_24662c60d7ea:Gu6BtNy3Ja9dfVA4hiK2h450P5NI962u2On68m71wVgqZo2eIh47@pg.rapidapp.io:5432/db_306a01ba_4e58_4ac6_8fb0_24662c60d7ea?ssl=true&sslmode=no-verify&application_name=rapidapp_nodejs')
+const sequelize = new Sequelize(process.env.DATABASE_URL)
 
 const Message = sequelize.define('Message', {
     username: Sequelize.DataTypes.STRING,
